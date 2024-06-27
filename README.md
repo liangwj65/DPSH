@@ -11,15 +11,11 @@ python==3.10.8  torchvision==0.18  pytorch==2.3.1 cuda==12.1
 - CIFAR-10:由于原论文为matlab实现，先后运行DataPrepare.m以及SaveFig.m来处理CIFAR-10数据集的matlab版本。脚本实现如下划分：对于每个类，随机选择 1,000 张图像作为查询集，其余图像作为检索数据库。然后从检索数据库中抽取每类 500 张图像（共 5,000 张）作为未标记的训练集。
 - NUS-WIDE-21:数据集的划分来自 DeepHash 库提供的样例，具体划分如下：每个类选取 100 个样本作为查询集，剩下样本作为数据库，每个类别选取 500 张图像作为训练集。在/data/NUS-WIDE中直接存放了相应数据集的索引以及one-hot编码。
 
+# 如何运行    
+```
+python DPSH_CIFAR_10_demo.py
+```
 
-
-You can download   NUS-WIDE [here](https://github.com/TreezzZ/DSDH_PyTorch)     
-Use data/nus-wide/code.py to randomly select 100 images per class as the query set (2,100 images in total). The remaining images are
-used as the database set, from which we randomly sample 500 images per class as the training set (10, 500 images
-in total).
-
-You can download  ImageNet, NUS-WIDE-m and COCO dataset [here](https://github.com/thuml/HashNet/tree/master/pytorch) where is the data split  copy from,  or [Baidu Pan(Password: hash)](https://pan.baidu.com/s/1_BiOmeCRYx6cVTWeWq-O9g).
-  
 NUS-WIDE-m is different from  NUS-WIDE, so i made a distinction.  
 
 269,648 images in NUS-WIDE , and 195834 images which are associated with 21 most frequent concepts.     
